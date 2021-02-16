@@ -6,9 +6,12 @@ import RedPrimaryMetadata from './subcomponents/cameraCalibration/RedPrimaryMeta
 import GreenPrimaryMetadata from './subcomponents/cameraCalibration/GreenPrimaryMetadata'
 import BluePrimaryMetadata from './subcomponents/cameraCalibration/BluePrimaryMetadata'
 
+// Primitives
+import MetadataDisplay from './primitives/MetadataDisplay'
+import MetadataSubheading from './primitives/MetadataSubheading'
+
 // Utils
 import { Context } from '../utils/Context'
-import MetadataDisplay from './primitives/MetadataDisplay'
 
 class CameraCalibrationMetadata extends Component {
   render() {
@@ -17,14 +20,19 @@ class CameraCalibrationMetadata extends Component {
         <MetadataDisplay title='Profile'>
           {this.context.state.imageMetadata?.CameraProfile?.value}
         </MetadataDisplay>
-        <b>Shadows</b>
+        <br/>
+        <MetadataSubheading>Shadows</MetadataSubheading>
         <ShadowsMetadata metadata={this.context.state.imageMetadata} />
-        <b>Red Primary</b>
+        <br/>
+        <MetadataSubheading>Red Primary</MetadataSubheading>
         <RedPrimaryMetadata metadata={this.context.state.imageMetadata} />
-        <b>Green Primary</b>
+        <br/>
+        <MetadataSubheading>Green Primary</MetadataSubheading>
         <GreenPrimaryMetadata metadata={this.context.state.imageMetadata} />
-        <b>Blue Primary</b>
+        <br/>
+        <MetadataSubheading>Blue Primary</MetadataSubheading>
         <BluePrimaryMetadata metadata={this.context.state.imageMetadata} />
+        <br/>
       </div>
     )
   }

@@ -4,6 +4,9 @@ import React, { Component } from 'react'
 import SharpeningMetadata from './subcomponents/detail/SharpeningMetadata'
 import NoiseReductionMetadata from './subcomponents/detail/NoiseReductionMetadata'
 
+// Primitives
+import MetadataSubheading from './primitives/MetadataSubheading'
+
 // Utils
 import { Context } from '../utils/Context'
 
@@ -11,10 +14,12 @@ class DetailMetadata extends Component {
   render() {
     return (
       <div>
-        <b>Sharpening</b>
+        <MetadataSubheading>Sharpening</MetadataSubheading>
         <SharpeningMetadata metadata={this.context.state.imageMetadata} />
-        <b>Noise Reduction</b>
+        <br/>
+        <MetadataSubheading>Noise Reduction</MetadataSubheading>
         <NoiseReductionMetadata metadata={this.context.state.imageMetadata} />
+        <br/>
       </div>
     )
   }

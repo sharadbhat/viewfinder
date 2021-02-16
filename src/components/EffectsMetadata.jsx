@@ -4,6 +4,9 @@ import React, { Component } from 'react'
 import PostCropVignettingMetadata from './subcomponents/effects/PostCropVignettingMetadata'
 import GrainMetadata from './subcomponents/effects/GrainMetadata'
 
+// Primitives
+import MetadataSubheading from './primitives/MetadataSubheading'
+
 // Utils
 import { Context } from '../utils/Context'
 
@@ -11,10 +14,12 @@ class EffectsMetadata extends Component {
   render() {
     return (
       <div>
-        <b>Post Crop Vignetting</b>
+        <MetadataSubheading>Post Crop Vignetting</MetadataSubheading>
         <PostCropVignettingMetadata metadata={this.context.state.imageMetadata} />
-        <b>Grain</b>
+        <br/>
+        <MetadataSubheading>Grain</MetadataSubheading>
         <GrainMetadata metadata={this.context.state.imageMetadata} />
+        <br/>
       </div>
     )
   }
