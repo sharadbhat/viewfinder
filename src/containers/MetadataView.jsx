@@ -15,18 +15,18 @@ import { Context } from '../utils/Context'
 class MetadataView extends Component {
   render() {
     return (
-      <div style={{ height: '100vh', overflow: 'scroll' }}>
-        <Divider orientation='right'>Basic</Divider>
+      <div style={{ height: '100vh', overflow: 'scroll', padding: '0 30px 0 30px' }}>
+        <Divider orientation='right' style={{ borderColor: '#000' }}>Basic</Divider>
         <BasicMetadata />
-        <Divider orientation='right'>HSL</Divider>
+        <Divider orientation='right' style={{ borderColor: '#000' }}>HSL</Divider>
         <HSLMetadata />
-        <Divider orientation='right'>Split Toning</Divider>
+        <Divider orientation='right' style={{ borderColor: '#000' }}>Split Toning</Divider>
         <SplitToningMetadata />
-        <Divider orientation='right'>Detail</Divider>
+        <Divider orientation='right' style={{ borderColor: '#000' }}>Detail</Divider>
         <DetailMetadata />
-        <Divider orientation='right'>Effects</Divider>
+        <Divider orientation='right' style={{ borderColor: '#000' }}>Effects</Divider>
         <EffectsMetadata />
-        <Divider orientation='right'>Camera Calibration</Divider>
+        <Divider orientation='right' style={{ borderColor: '#000' }}>Camera Calibration</Divider>
         <CameraCalibrationMetadata />
       </div>
     )

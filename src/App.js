@@ -41,7 +41,7 @@ function App() {
             </div>
           </div>
         </Content>
-        <Sider width={400} theme='light' style={{ borderLeft: 'solid 2px grey' }}>
+        <Sider width={400} style={{ backgroundColor: 'lightgray' }}>
           <MetadataView />
         </Sider>
       </Layout>

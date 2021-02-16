@@ -1,4 +1,3 @@
-import { Col, Row } from 'antd'
 import React, { Component } from 'react'
 
 // Sub Components
@@ -9,15 +8,15 @@ import BluePrimaryMetadata from './subcomponents/cameraCalibration/BluePrimaryMe
 
 // Utils
 import { Context } from '../utils/Context'
+import MetadataDisplay from './primitives/MetadataDisplay'
 
 class CameraCalibrationMetadata extends Component {
   render() {
     return (
       <div>
-        <Row>
-          <Col flex={2}>Profile</Col>
-          <Col flex={3}>{this.context.state.imageMetadata?.CameraProfile?.value}</Col>
-        </Row>
+        <MetadataDisplay title='Profile'>
+          {this.context.state.imageMetadata?.CameraProfile?.value}
+        </MetadataDisplay>
         <b>Shadows</b>
         <ShadowsMetadata metadata={this.context.state.imageMetadata} />
         <b>Red Primary</b>
