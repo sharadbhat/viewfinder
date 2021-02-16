@@ -1,5 +1,5 @@
-import { Divider } from 'antd'
 import React, { Component } from 'react'
+import { Divider } from 'antd'
 
 // Components
 import BasicMetadata from '../components/BasicMetadata'
