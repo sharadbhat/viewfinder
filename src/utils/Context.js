@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 // Utils
-import getXMP from './getXMP'
+import getMetadata from './getMetadata'
 
 const Context = React.createContext()
 
@@ -10,20 +10,24 @@ class Provider extends Component {
     super(props)
     this.state = {
       imageData: null,
+      imageExif: null,
       imageMetadata: null
     }
   }
 
   setImageData = imageDataArrayBuffer => {
+    let metadata = getMetadata(imageDataArrayBuffer) || null
     this.setState({
       imageData: Buffer.from(imageDataArrayBuffer).toString('base64'),
-      imageMetadata: getXMP(imageDataArrayBuffer)
+      imageExif: metadata?.exif,
+      imageMetadata: metadata?.xmp
     })
   }
 
   clearImageData = () => {
     this.setState({
       imageData: null,
+      imageExif: null,
       imageMetadata: null
     })
   }
