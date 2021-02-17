@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import { Layout } from 'antd'
 
 // Containers
+import CameraDetailsView from './containers/CameraDetailsView'
 import MetadataView from './containers/MetadataView'
 
 // Components
@@ -45,6 +46,9 @@ function App() {
             </div>
           </div>
         </Content>
+        <Sider width={300} style={{ backgroundColor: '#E0E0E0' }}>
+          <CameraDetailsView />
+        </Sider>
         <Sider width={400} style={{ backgroundColor: '#E0E0E0' }}>
           <MetadataView />
         </Sider>

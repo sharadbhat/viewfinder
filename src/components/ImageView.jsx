@@ -9,8 +9,7 @@ class ImageView extends Component {
     return (
       <div style={{ textAlign: 'center' }}>
         <img
-          height='500px'
-          style={{ borderRadius: 10 }}
+          style={{ borderRadius: 10, maxWidth: '600px', maxHeight: '500px' }}
           src={"data:image/jpg;base64, " + this.context.state.imageData}
           alt='Uploaded photograph'
         />
