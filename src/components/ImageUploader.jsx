@@ -28,6 +28,8 @@ class ImageUploader extends Component {
     return (
       <div>
         <Dragger
+          height={300}
+          style={{ backgroundColor: 'whitesmoke', borderRadius: 10 }}
           showUploadList={false}
           multiple={false}
           accept={['.jpg', '.jpeg']}

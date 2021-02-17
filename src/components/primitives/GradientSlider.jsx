@@ -7,6 +7,7 @@ class GradientSlider extends Component {
       <Row>
         <Col style={{ width: 150 }}>
           <Slider
+            tooltipVisible={false}
             min={this.props.min || 0}
             max={this.props.max || 100}
             defaultValue={this.props.defaultValue || 0}
