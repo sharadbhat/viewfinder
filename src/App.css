@@ -1,5 +1,33 @@
+.site-layout {
+  height: 100vh;
+}
+
+.content {
+  padding: 25px;
+}
+
 .site-layout-content {
   height: 100%;
   padding: 24px;
   background: #fff;
+}
+
+.new-image-div {
+  width: 40vw;
+  margin: 0 auto;
+}
+
+.sample-list {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sample-list img {
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
 }

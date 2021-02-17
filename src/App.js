@@ -6,6 +6,7 @@ import MetadataView from './containers/MetadataView'
 
 // Components
 import ImageUploader from './components/ImageUploader'
+import SampleImageList from './components/SampleImageList'
 import ImageView from './components/ImageView'
 
 // Utils
@@ -20,16 +21,19 @@ const { Content, Sider } = Layout
 function App() {
   return (
     <Provider>
-      <Layout style={{ height: '100vh' }}>
-        <Content style={{ padding: '25px' }}>
+      <Layout className='site-layout'>
+        <Content className='content'>
           <div className='site-layout-content'>
             <div>
               <Consumer>
                 {context => (
                   <Fragment>
                     {(context.state.imageData === null || context.state.imageData === undefined) &&
-                      <div style={{ width: '40vw', margin: '0 auto' }}>
+                      <div className='new-image-div'>
                         <ImageUploader />
+                        <div style={{ marginTop: 100 }}>
+                          <SampleImageList />
+                        </div>
                       </div>
                     }
                     {(context.state.imageData === null || context.state.imageData === undefined) ||
@@ -41,7 +45,7 @@ function App() {
             </div>
           </div>
         </Content>
-        <Sider width={400} style={{ backgroundColor: 'lightgray' }}>
+        <Sider width={400} style={{ backgroundColor: '#E0E0E0' }}>
           <MetadataView />
         </Sider>
       </Layout>
