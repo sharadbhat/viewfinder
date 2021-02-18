@@ -4,8 +4,8 @@ import Axios from 'axios'
 import { v4 as uuid } from 'uuid'
 
 // Utils
-import { Context } from '../utils/Context.js'
-import sampleList from "../utils/sampleImagesList.js"
+import { Context } from '../utils/Context'
+import sampleList from "../utils/sampleImagesList"
 
 class SampleImageList extends Component {
   selectImage = async imgSrc => {
