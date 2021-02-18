@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+// Containers
+import MetadataSubsection from '../containers/MetadataSubsection'
+
 // Sub Components
 import ShadowsMetadata from './subcomponents/splitToning/ShadowsMetadata'
 import RedPrimaryMetadata from './subcomponents/cameraCalibration/RedPrimaryMetadata'
@@ -8,7 +11,6 @@ import BluePrimaryMetadata from './subcomponents/cameraCalibration/BluePrimaryMe
 
 // Primitives
 import MetadataDisplay from './primitives/MetadataDisplay'
-import MetadataSubheading from './primitives/MetadataSubheading'
 
 // Utils
 import { Context } from '../utils/Context'
@@ -17,22 +19,27 @@ class CameraCalibrationMetadata extends Component {
   render() {
     return (
       <div>
-        <MetadataDisplay title='Profile'>
-          {this.context.state.imageMetadata?.CameraProfile?.value}
-        </MetadataDisplay>
-        <br/>
-        <MetadataSubheading>Shadows</MetadataSubheading>
-        <ShadowsMetadata metadata={this.context.state.imageMetadata} />
-        <br/>
-        <MetadataSubheading>Red Primary</MetadataSubheading>
-        <RedPrimaryMetadata metadata={this.context.state.imageMetadata} />
-        <br/>
-        <MetadataSubheading>Green Primary</MetadataSubheading>
-        <GreenPrimaryMetadata metadata={this.context.state.imageMetadata} />
-        <br/>
-        <MetadataSubheading>Blue Primary</MetadataSubheading>
-        <BluePrimaryMetadata metadata={this.context.state.imageMetadata} />
-        <br/>
+        <MetadataSubsection subheading=''>
+          <MetadataDisplay title='Profile'>
+            {this.context.state.imageMetadata?.CameraProfile?.value || '—'}
+          </MetadataDisplay>
+        </MetadataSubsection>
+        
+        <MetadataSubsection subheading='Shadows'>
+          <ShadowsMetadata metadata={this.context.state.imageMetadata} />
+        </MetadataSubsection>
+        
+        <MetadataSubsection subheading='Red Primary'>
+          <RedPrimaryMetadata metadata={this.context.state.imageMetadata} />
+        </MetadataSubsection>
+        
+        <MetadataSubsection subheading='Green Primary'>
+          <GreenPrimaryMetadata metadata={this.context.state.imageMetadata} />
+        </MetadataSubsection>
+        
+        <MetadataSubsection subheading='Blue Primary'>
+          <BluePrimaryMetadata metadata={this.context.state.imageMetadata} />
+        </MetadataSubsection>
       </div>
     )
   }

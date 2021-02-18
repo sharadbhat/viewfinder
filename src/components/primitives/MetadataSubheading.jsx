@@ -4,7 +4,7 @@ import { Tag } from 'antd'
 class MetadataSubheading extends Component {
   render() {
     return (
-      <div style={{ textAlign: 'center', marginBottom: 7 }}>
+      <div className='metadata-subheading'>
         <Tag>
           <b>
             {this.props.children}

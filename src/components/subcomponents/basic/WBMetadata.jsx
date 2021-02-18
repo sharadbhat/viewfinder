@@ -9,11 +9,13 @@ class WBMetadata extends Component {
     return (
       <div>
         <MetadataDisplay title='White Balance'>
-          {this.props.metadata?.WhiteBalance?.value}
+          {this.props.metadata?.WhiteBalance?.value || '—'}
         </MetadataDisplay>
+
         <MetadataDisplay title='Temperature'>
-          {this.props.metadata?.Temperature?.value}
+          {this.props.metadata?.Temperature?.value || '—'}
         </MetadataDisplay>
+
         <MetadataDisplay title='Tint'>
           <GradientSlider
             gradientString={'linear-gradient(to right, rgb(59, 153, 58) 0%, rgb(99, 97, 100) 50%, rgb(153, 57, 152) 100%)'}

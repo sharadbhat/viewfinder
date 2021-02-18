@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { Divider } from 'antd';
-import Axios from 'axios';
-import { v4 as uuid } from 'uuid';
+import { Divider } from 'antd'
+import Axios from 'axios'
+import { v4 as uuid } from 'uuid'
 
 // Utils
-import { Context } from '../utils/Context.js';
-import sampleList from "../utils/sampleImagesList.js";
+import { Context } from '../utils/Context.js'
+import sampleList from "../utils/sampleImagesList.js"
 
 class SampleImageList extends Component {
   selectImage = async imgSrc => {

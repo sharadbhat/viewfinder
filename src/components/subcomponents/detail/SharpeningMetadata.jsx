@@ -19,7 +19,7 @@ class SharpeningMetadata extends Component {
         </MetadataDisplay>
 
         <MetadataDisplay title='Radius'>
-          {this.props.metadata?.SharpenRadius?.value}
+          {this.props.metadata?.SharpenRadius?.value || '—'}
         </MetadataDisplay>
 
         <MetadataDisplay title='Detail'>

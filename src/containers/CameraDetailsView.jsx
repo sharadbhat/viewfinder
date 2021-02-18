@@ -9,9 +9,9 @@ const { Item } = Descriptions
 class CameraDetailsView extends Component {
   render() {
     return (
-      <div style={{ height: '100vh', overflow: 'scroll', padding: 20 }}>
+      <div className='camera-details-view'>
         <Descriptions
-        size={'small'}
+          size={'small'}
           layout='vertical'
           colon={false}
           column={2}
