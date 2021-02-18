@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
-import { Descriptions, Tag } from 'antd'
+import { Descriptions, Typography, Tag } from 'antd'
 
 // Utils
 import { Context } from '../utils/Context'
 
 const { Item } = Descriptions
+const { Title } = Typography
 
 class CameraDetailsView extends Component {
   render() {
     return (
-      <div className='camera-details-view'>
+      <div>
+        <Title level={5}>EXIF Data</Title>
         <Descriptions
           size={'small'}
           layout='vertical'

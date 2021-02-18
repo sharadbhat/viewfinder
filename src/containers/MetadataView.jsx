@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Typography } from 'antd'
 import { v4 as uuid } from 'uuid'
 
 // Containers
@@ -15,6 +16,8 @@ import CameraCalibrationMetadata from '../components/CameraCalibrationMetadata'
 
 // Utils
 import { Context } from '../utils/Context'
+
+const { Title } = Typography
 
 let sectionsList = [
   {
@@ -50,7 +53,8 @@ let sectionsList = [
 class MetadataView extends Component {
   render() {
     return (
-      <div className='metadata-view'>
+      <div>
+        <Title level={5}>Lightroom Settings</Title>
         {sectionsList.map(object => {
           return (
             <MetadataSection key={uuid()} title={object.title}>

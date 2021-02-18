@@ -22,14 +22,14 @@ class SampleImageList extends Component {
           Try some sample images!
         </Divider>
         <div className='sample-list'>
-          {sampleList.map((imgSrc, i) => {
+          {sampleList.map((imgSrc, index) => {
             return (
               <img
                 key={uuid()}
                 width={125}
                 height={125}
                 src={imgSrc}
-                alt={`sample${i}`}
+                alt={`sample${index+1}`}
                 onClick={() => this.selectImage(imgSrc)}
               />
             )})

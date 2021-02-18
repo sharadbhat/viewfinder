@@ -13,23 +13,42 @@
 }
 
 .new-image-div {
-  width: 40vw;
+  width: 90%;
   margin: 0 auto;
 }
 
 .sample-list {
-  padding: 10px;
+  width: 60%;
+  margin: 0 auto;
+  padding: 10px 0 10px 0;
   border-radius: 10px;
   background-color: whitesmoke;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
   align-items: center;
 }
 
 .sample-list img {
+  margin: 5px;
   border-radius: 10px;
   object-fit: cover;
   cursor: pointer;
+}
+
+.image-view {
+  text-align: center;
+}
+
+.image-view img {
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 70vh;
+}
+
+.image-view Button {
+  margin-top: 20px;
 }
 
 .camera-details-view {
@@ -42,7 +61,7 @@
 .metadata-view {
   height: 100vh;
   overflow: scroll;
-  padding: 0 30px 0 30px;
+  padding: 20px;
   scrollbar-width: thin;
 }
 
@@ -59,4 +78,71 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* 
+Responsive
+----------
+*/
+
+.mobile-visible {
+  display: none;
+}
+
+.mobile-hidden {
+  display: block;
+}
+
+@media (min-width: 1025px) and (max-width: 1300px) {
+  .sample-list {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .mobile-visible {
+    display: block;
+  }
+
+  .mobile-hidden {
+    display: none;
+  }
+
+  .site-layout {
+    height: auto;
+  }
+
+  .site-layout-content {
+    height: auto;
+  }
+
+  .header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+  }
+
+  .content {
+    padding: 0px;
+  }
+
+  .new-image-div {
+    width: 80vw;
+    margin: 0 auto;
+  }
+
+  .sample-list {
+    width: 90%;
+  }
+
+  .image-view img {
+    max-width: 70vw;
+    max-height: 70vh;
+  }
+
+  .details {
+    overflow: scroll;
+    background-color: #e0e0e0;
+  }
 }

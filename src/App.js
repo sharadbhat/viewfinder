@@ -17,13 +17,20 @@ import { Consumer, Provider } from './utils/Context'
 import './App.css'
 import 'antd/dist/antd.css'
 
-const { Content, Sider } = Layout
+const { Header, Content, Sider } = Layout
 
 function App() {
   return (
     <Provider>
       <Layout className='site-layout'>
         <Content className='content'>
+          <div className='mobile-visible'>
+            <Header>
+              <h1 className='header'>
+                ViewFinder
+              </h1>
+            </Header>
+          </div>
           <div className='site-layout-content'>
             <div>
               <Consumer>
@@ -31,8 +38,10 @@ function App() {
                   <Fragment>
                     {(context.state.imageData === null || context.state.imageData === undefined) &&
                       <div className='new-image-div'>
-                        <ImageUploader />
-                        <div style={{ marginTop: 100 }}>
+                        <div>
+                          <ImageUploader />
+                        </div>
+                        <div>
                           <SampleImageList />
                         </div>
                       </div>
@@ -45,13 +54,32 @@ function App() {
               </Consumer>
             </div>
           </div>
+
+          {/* FOR MOBILE */}
+          <div className='mobile-visible details'>
+            <div style={{ padding: 20 }}>
+              <CameraDetailsView />
+              <MetadataView />
+            </div>
+          </div>
         </Content>
-        <Sider width={300} style={{ backgroundColor: '#E0E0E0' }}>
-          <CameraDetailsView />
-        </Sider>
-        <Sider width={400} style={{ backgroundColor: '#E0E0E0', borderLeft: 'solid 5px lightgray' }}>
-          <MetadataView />
-        </Sider>
+
+        {/* FOR DESKTOP */}
+        <div className='mobile-hidden'>
+          <Sider width={300} style={{ backgroundColor: '#E0E0E0' }}>
+            <div className='camera-details-view'>
+              <CameraDetailsView />
+            </div>
+          </Sider>
+        </div>
+        <div className='mobile-hidden'>
+          <Sider width={400} style={{ backgroundColor: '#E0E0E0', borderLeft: 'solid 5px lightgray' }}>
+            <div className='metadata-view'>
+              <MetadataView />
+            </div>
+          </Sider>
+        </div>
+        
       </Layout>
     </Provider>
   )

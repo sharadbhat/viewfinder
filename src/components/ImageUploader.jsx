@@ -1,21 +1,20 @@
 import React, { Component } from 'react'
-import { Upload, message } from 'antd';
+import { Upload } from 'antd'
 
 // Utils
 import { Context } from '../utils/Context'
 
 // Icons
-import { InboxOutlined } from '@ant-design/icons';
+import { InboxOutlined } from '@ant-design/icons'
 
-const { Dragger } = Upload;
+const { Dragger } = Upload
 
 class ImageUploader extends Component {
   beforeUpload = async file => {
     const reader = new FileReader()
 
-    reader.onloadend = e => {
+    reader.onloadend = () => {
       this.context.setImageData(reader.result)
-      message.success('File uploaded successfully')
     }
     
     reader.readAsArrayBuffer(file)
@@ -28,7 +27,7 @@ class ImageUploader extends Component {
     return (
       <div>
         <Dragger
-          height={300}
+          height={250}
           style={{ backgroundColor: 'whitesmoke', borderRadius: 10 }}
           showUploadList={false}
           multiple={false}
