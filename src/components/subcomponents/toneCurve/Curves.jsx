@@ -3,7 +3,6 @@ import { Radio } from 'antd'
 
 // Primitives
 import CurveGraph from '../../primitives/CurveGraph'
-import MetadataDisplay from '../../primitives/MetadataDisplay'
 
 class Curves extends Component {
   constructor(props) {
