@@ -3,6 +3,7 @@ import { Radio } from 'antd'
 
 // Primitives
 import CurveGraph from '../../primitives/CurveGraph'
+import MetadataDisplay from '../../primitives/MetadataDisplay'
 
 class Curves extends Component {
   constructor(props) {
@@ -68,7 +69,7 @@ class Curves extends Component {
     return (
       <div className='curves'>
         <Radio.Group
-          style={{ marginBottom: 15, borderRadius: 5 }}
+          style={{ marginBottom: 15 }}
           optionType='button'
           buttonStyle='solid'
           options={this.radioOptions}
@@ -81,6 +82,9 @@ class Curves extends Component {
           color={this.state.radioValue}
           datapoints={this.state.datapoints}
         />
+        <div style={{ display: 'inline-block' }}>
+          {this.props.metadata?.ToneCurveName2012?.value || <br />}
+        </div>
       </div>
     )
   }

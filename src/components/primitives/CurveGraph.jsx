@@ -18,8 +18,8 @@ class CurveGraph extends Component {
     return (
       <div>
         <Chart
-          width={'180px'}
-          height={'180px'}
+          width={'250px'}
+          height={'250px'}
           chartType='LineChart'
           loader={
             <div style={{ display: 'flex', flexDirection: 'column' }}>

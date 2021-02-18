@@ -49,7 +49,7 @@ function App() {
         <Sider width={300} style={{ backgroundColor: '#E0E0E0' }}>
           <CameraDetailsView />
         </Sider>
-        <Sider width={400} style={{ backgroundColor: '#E0E0E0' }}>
+        <Sider width={400} style={{ backgroundColor: '#E0E0E0', borderLeft: 'solid 5px lightgray' }}>
           <MetadataView />
         </Sider>
       </Layout>
