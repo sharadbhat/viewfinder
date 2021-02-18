@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { message } from 'antd'
 
 // Utils
 import getMetadata from './getMetadata'
@@ -19,8 +20,12 @@ class Provider extends Component {
     let metadata = getMetadata(imageDataArrayBuffer) || null
     this.setState({
       imageData: Buffer.from(imageDataArrayBuffer).toString('base64'),
-      imageExif: metadata?.exif,
-      imageMetadata: metadata?.xmp
+      imageExif: metadata?.exif || null,
+      imageMetadata: metadata?.xmp || null
+    }, () => {
+      if (this.state.imageExif === null) {
+        message.error('No EXIF data in image')
+      }
     })
   }
 
