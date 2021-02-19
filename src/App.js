@@ -24,7 +24,7 @@ function App() {
     <Provider>
       <Layout className='site-layout'>
         <Content className='content'>
-          <div className='mobile-visible'>
+          <div className='desktop-hidden'>
             <Header>
               <h1 className='header'>
                 ViewFinder
@@ -59,6 +59,16 @@ function App() {
           <div className='mobile-visible details'>
             <div style={{ padding: 20 }}>
               <CameraDetailsView />
+              <MetadataView />
+            </div>
+          </div>
+
+          {/* FOR TABLET */}
+          <div className='tablet-visible details'>
+            <div className='camera-details-view'>
+              <CameraDetailsView />
+            </div>
+            <div className='metadata-view'>
               <MetadataView />
             </div>
           </div>
