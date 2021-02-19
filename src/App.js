@@ -65,14 +65,14 @@ function App() {
         </Content>
 
         {/* FOR DESKTOP */}
-        <div className='mobile-hidden'>
+        <div className='desktop-visible'>
           <Sider width={300} style={{ backgroundColor: '#E0E0E0' }}>
             <div className='camera-details-view'>
               <CameraDetailsView />
             </div>
           </Sider>
         </div>
-        <div className='mobile-hidden'>
+        <div className='desktop-visible'>
           <Sider width={400} style={{ backgroundColor: '#E0E0E0', borderLeft: 'solid 5px lightgray' }}>
             <div className='metadata-view'>
               <MetadataView />
